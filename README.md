@@ -12,10 +12,11 @@
 
 
 # 安裝流程
-* 在終端機輸入指令 clone 此專案至本機電腦 `git clone `
+* 在終端機輸入指令 clone 此專案至本機電腦 `git clone https://github.com/mush1200/trash_talk_generator.git`
 * 進入專案目錄 `cd trash_talk_generator`
 * 安裝相關套件 `npm install`
 * 安裝 nodemon 套件 (若未安裝)`npm install -g nodemon`
 * 啟動專案 `npm run dev`
 * 出現以下訊息後，即可在 http://localhost:3000 開始使用 
+
 ```The Express server is running on http://localhost:3000.```
