@@ -9,7 +9,7 @@
           <img src="{{this.img}}" class="card-img-top" alt="{{this.title}}" style="height: 14rem;">
           <div class="card-body text-center">
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="career" id="{{this.id}}" value="{{this.id}}">{{this.title}}
+              <input class="form-check-input" type="radio" name="career" id="{{this.id}}" value="{{this.id}}" {{isSelected this.id}}>{{this.title}}
             </div>
           </div>
         </div>

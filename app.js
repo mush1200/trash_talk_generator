@@ -4,8 +4,16 @@ const app = express()
 const port = 3000
 const list = require('./contents.json')
 const trashTalkGenerator = require('./models/generate_trash_talk')
+let selectCareer = ''
+app.engine('handlebars', exphbs({ 
+  defaultLayout: 'main',
+  helpers: {
+    isSelected: function(id) {
+      if (id === selectCareer) return 'checked'
+    }
+  }
 
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+}))
 app.set('view engine', 'handlebars')
 app.use(express.urlencoded({ extended: true} ))
 
@@ -14,6 +22,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
+  selectCareer = req.body.career
   const trashtalk = trashTalkGenerator(req.body.career)
   res.render('index', { careers: list.job, trashtalk: trashtalk})
 })
